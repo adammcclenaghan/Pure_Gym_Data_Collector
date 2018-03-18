@@ -1,3 +1,6 @@
+# Ignore the email_and_pin.txt
+./resources/email_and_pin.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
