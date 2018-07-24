@@ -15,6 +15,15 @@ Install dependencies:
 sudo apt-get update
 sudo apt-get install -y unzip openjdk-8-jre-headless xvfb libxi6 libgconf-2-4
 ```
+Install pip3 if you don't have it already 
+```
+sudo apt-get install python3-pip
+```
+Install python requirements via pip3
+```
+pip3 install -r requirements.txt
+```
+
 Then chrome:
 ```
 sudo curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
