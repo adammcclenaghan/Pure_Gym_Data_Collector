@@ -5,6 +5,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
+from pyvirtualdisplay import Display
 
 EMAIL_PIN_FILE = "../resources/email_and_pin.txt"
 OUTPUT_FILE = "../resources/collector_output.txt"
@@ -99,6 +100,8 @@ def wait_for_element_then_click_custom_timeout(browser, css_selector, element_id
 
 
 if __name__ == '__main__':
+    display = Display(visible=0, size=(800, 600))
+    display.start()
     # Get the text containing the number of people in the gym
     people_in_gym_text = login_and_get_people_in_gym_text(get_email_and_pin_from_file())
     # Only continue if we didn't encounter a TimeoutException
@@ -106,4 +109,4 @@ if __name__ == '__main__':
         # Strip out anything other than the number object
         number_of_people = get_number_from_people_in_gym_text(people_in_gym_text)
         save_number_to_output_file(number_of_people)
-
+    display.stop()
